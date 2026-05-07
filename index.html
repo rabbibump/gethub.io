@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Integral Clarity Coaching | Whole-Life Clarity. Clear Action.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --navy: #1B2A4A;
+    --teal: #2E86AB;
+    --teal-light: #D6EEF5;
+    --gold: #C9952A;
+    --gold-light: #FDF3E0;
+    --off-white: #F8F6F2;
+    --text-dark: #1B2A4A;
+    --text-mid: #4A5568;
+    --text-light: #718096;
+    --white: #FFFFFF;
+  }
+  body { font-family: 'DM Sans', sans-serif; color: var(--text-dark); background: var(--white); overflow-x: hidden; }
+
+  /* NAV */
+  .nav { display: flex; justify-content: space-between; align-items: center; padding: 1.25rem 3rem; position: sticky; top: 0; background: rgba(255,255,255,0.97); border-bottom: 1px solid rgba(27,42,74,0.08); z-index: 100; }
+  .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; font-weight: 600; color: var(--navy); letter-spacing: 0.02em; }
+  .nav-logo span { color: var(--teal); }
+  .nav-links { display: flex; gap: 2rem; align-items: center; }
+  .nav-links a { font-size: 0.85rem; font-weight: 400; color: var(--text-mid); text-decoration: none; letter-spacing: 0.04em; text-transform: uppercase; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--teal); }
+  .nav-cta { background: var(--navy); color: var(--white) !important; padding: 0.6rem 1.4rem; border-radius: 2px; font-size: 0.8rem !important; letter-spacing: 0.06em !important; transition: background 0.2s !important; }
+  .nav-cta:hover { background: var(--teal) !important; color: var(--white) !important; }
+
+  /* HERO */
+  .hero { min-height: 92vh; display: grid; grid-template-columns: 1fr 1fr; background: var(--navy); position: relative; overflow: hidden; }
+  .hero-left { padding: 6rem 3rem 6rem 4rem; display: flex; flex-direction: column; justify-content: center; position: relative; z-index: 2; }
+  .hero-eyebrow { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.75rem; }
+  .hero-eyebrow::before { content: ''; display: block; width: 2rem; height: 1px; background: var(--gold); }
+  .hero-headline { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.8rem, 4.5vw, 4rem); font-weight: 500; line-height: 1.12; color: var(--white); margin-bottom: 1rem; }
+  .hero-headline em { color: var(--teal); font-style: italic; }
+  .hero-tagline { font-size: 1rem; font-weight: 300; color: rgba(255,255,255,0.65); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 2rem; border-left: 2px solid var(--gold); padding-left: 1rem; }
+  .hero-sub { font-size: 1rem; font-weight: 300; color: rgba(255,255,255,0.75); line-height: 1.75; margin-bottom: 2.5rem; max-width: 460px; }
+  .hero-actions { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; }
+  .btn-primary { background: var(--gold); color: var(--navy); padding: 0.9rem 2rem; font-family: 'DM Sans', sans-serif; font-size: 0.85rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; border: none; border-radius: 2px; cursor: pointer; transition: all 0.2s; text-decoration: none; display: inline-block; }
+  .btn-primary:hover { background: #b8841f; transform: translateY(-1px); }
+  .btn-ghost { background: transparent; color: rgba(255,255,255,0.8); padding: 0.9rem 2rem; font-family: 'DM Sans', sans-serif; font-size: 0.85rem; font-weight: 400; letter-spacing: 0.06em; text-transform: uppercase; border: 1px solid rgba(255,255,255,0.25); border-radius: 2px; cursor: pointer; transition: all 0.2s; text-decoration: none; display: inline-block; }
+  .btn-ghost:hover { border-color: rgba(255,255,255,0.6); color: var(--white); }
+  .hero-right { position: relative; display: flex; align-items: center; justify-content: center; }
+  .hero-pattern { position: absolute; inset: 0; background-image: radial-gradient(circle at 60% 40%, rgba(46,134,171,0.12) 0%, transparent 60%), radial-gradient(circle at 90% 80%, rgba(201,149,42,0.08) 0%, transparent 50%); }
+  .hero-card { position: relative; z-index: 2; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 4px; padding: 2.5rem; max-width: 340px; backdrop-filter: blur(4px); }
+  .hero-card-label { font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.25rem; }
+  .hero-pillars { display: flex; flex-direction: column; gap: 0.85rem; }
+  .pillar { display: flex; align-items: flex-start; gap: 0.85rem; }
+  .pillar-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--teal); margin-top: 0.45rem; flex-shrink: 0; }
+  .pillar-text { font-size: 0.9rem; color: rgba(255,255,255,0.8); line-height: 1.5; }
+  .pillar-text strong { color: var(--white); font-weight: 500; display: block; font-size: 0.95rem; }
+
+  /* TRUST BAR */
+  .trust-bar { background: var(--off-white); padding: 1.5rem 4rem; display: flex; align-items: center; justify-content: center; gap: 3rem; border-bottom: 1px solid rgba(27,42,74,0.08); flex-wrap: wrap; }
+  .trust-item { font-size: 0.78rem; font-weight: 400; color: var(--text-mid); letter-spacing: 0.06em; text-transform: uppercase; display: flex; align-items: center; gap: 0.5rem; }
+  .trust-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--gold); }
+
+  /* SECTIONS SHARED */
+  section { padding: 5rem 4rem; }
+  .section-label { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.75rem; }
+  .section-label::before { content: ''; display: block; width: 1.5rem; height: 1px; background: var(--teal); }
+  .section-headline { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 3.5vw, 2.8rem); font-weight: 500; color: var(--navy); line-height: 1.2; margin-bottom: 1.25rem; }
+  .section-body { font-size: 1rem; font-weight: 300; color: var(--text-mid); line-height: 1.8; max-width: 600px; }
+
+  /* WHO I HELP */
+  .who { background: var(--white); }
+  .who-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+  .who-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .who-card { background: var(--off-white); border-radius: 4px; padding: 1.5rem; border-left: 3px solid var(--teal); }
+  .who-card.gold { border-left-color: var(--gold); }
+  .who-card h4 { font-size: 0.85rem; font-weight: 500; color: var(--navy); margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.05em; }
+  .who-card p { font-size: 0.875rem; color: var(--text-mid); line-height: 1.6; font-weight: 300; }
+
+  /* WHAT I DO */
+  .what { background: var(--navy); }
+  .what .section-label { color: var(--gold); }
+  .what .section-label::before { background: var(--gold); }
+  .what .section-headline { color: var(--white); }
+  .what .section-body { color: rgba(255,255,255,0.65); }
+  .what-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem; }
+  .what-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 4px; padding: 2rem; transition: border-color 0.2s; }
+  .what-card:hover { border-color: rgba(46,134,171,0.5); }
+  .what-num { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; font-weight: 400; color: rgba(201,149,42,0.3); line-height: 1; margin-bottom: 1rem; }
+  .what-card h3 { font-size: 1rem; font-weight: 500; color: var(--white); margin-bottom: 0.75rem; }
+  .what-card p { font-size: 0.875rem; font-weight: 300; color: rgba(255,255,255,0.6); line-height: 1.7; }
+
+  /* FRAMEWORK */
+  .framework { background: var(--off-white); }
+  .framework-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; margin-top: 2rem; }
+  .framework-steps { display: flex; flex-direction: column; gap: 0; }
+  .framework-step { display: flex; gap: 1.25rem; padding: 1.25rem 0; border-bottom: 1px solid rgba(27,42,74,0.08); }
+  .framework-step:last-child { border-bottom: none; }
+  .step-num { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 400; color: var(--teal); min-width: 2rem; line-height: 1.2; }
+  .step-content h4 { font-size: 0.9rem; font-weight: 500; color: var(--navy); margin-bottom: 0.3rem; }
+  .step-content p { font-size: 0.85rem; font-weight: 300; color: var(--text-mid); line-height: 1.6; }
+  .framework-pillars { display: flex; flex-direction: column; gap: 1rem; }
+  .fw-pillar { background: var(--white); border-radius: 4px; padding: 1.25rem 1.5rem; border-left: 3px solid var(--navy); }
+  .fw-pillar.teal { border-left-color: var(--teal); }
+  .fw-pillar.gold { border-left-color: var(--gold); }
+  .fw-pillar h4 { font-size: 0.85rem; font-weight: 500; color: var(--navy); margin-bottom: 0.3rem; letter-spacing: 0.03em; }
+  .fw-pillar p { font-size: 0.8rem; font-weight: 300; color: var(--text-mid); line-height: 1.55; }
+
+  /* ABOUT */
+  .about { background: var(--white); }
+  .about-grid { display: grid; grid-template-columns: 1fr 1.6fr; gap: 5rem; align-items: center; }
+  .about-img { background: var(--navy); border-radius: 4px; aspect-ratio: 3/4; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; max-width: 300px; }
+  .about-img-placeholder { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: rgba(255,255,255,0.4); text-align: center; padding: 2rem; font-style: italic; }
+  .about-img-accent { position: absolute; bottom: 0; left: 0; right: 0; height: 4px; background: var(--gold); }
+  .about-quote { background: var(--off-white); border-left: 3px solid var(--gold); padding: 1.5rem; margin: 1.5rem 0; border-radius: 0 4px 4px 0; }
+  .about-quote p { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-style: italic; color: var(--navy); line-height: 1.6; }
+
+  /* OFFERS */
+  .offers { background: var(--off-white); }
+  .offers-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem; }
+  .offer-card { background: var(--white); border-radius: 4px; padding: 2rem; border: 1px solid rgba(27,42,74,0.1); transition: all 0.2s; position: relative; overflow: hidden; }
+  .offer-card:hover { transform: translateY(-3px); border-color: var(--teal); }
+  .offer-card.featured { border-color: var(--navy); border-width: 2px; }
+  .offer-badge { position: absolute; top: 1rem; right: 1rem; background: var(--navy); color: var(--white); font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.3rem 0.65rem; border-radius: 2px; }
+  .offer-card h3 { font-size: 1rem; font-weight: 500; color: var(--navy); margin-bottom: 0.5rem; }
+  .offer-card .offer-desc { font-size: 0.875rem; font-weight: 300; color: var(--text-mid); line-height: 1.7; margin-bottom: 1.25rem; }
+  .offer-details { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 1.5rem; }
+  .offer-detail { font-size: 0.8rem; color: var(--text-mid); display: flex; gap: 0.5rem; align-items: flex-start; }
+  .offer-detail::before { content: '—'; color: var(--teal); flex-shrink: 0; font-weight: 500; }
+  .offer-price { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 500; color: var(--navy); margin-bottom: 1.25rem; }
+  .offer-price span { font-size: 0.85rem; font-weight: 300; color: var(--text-light); font-family: 'DM Sans', sans-serif; }
+  .btn-outline { display: block; text-align: center; padding: 0.75rem; border: 1px solid var(--navy); color: var(--navy); font-size: 0.8rem; letter-spacing: 0.06em; text-transform: uppercase; border-radius: 2px; cursor: pointer; background: transparent; transition: all 0.2s; text-decoration: none; font-family: 'DM Sans', sans-serif; font-weight: 500; }
+  .btn-outline:hover { background: var(--navy); color: var(--white); }
+  .btn-outline.teal { border-color: var(--teal); color: var(--teal); }
+  .btn-outline.teal:hover { background: var(--teal); color: var(--white); }
+
+  /* LEAD MAGNET */
+  .lead-magnet { background: var(--teal); padding: 4rem; }
+  .lead-inner { max-width: 700px; margin: 0 auto; text-align: center; }
+  .lead-magnet .section-label { color: rgba(255,255,255,0.7); justify-content: center; }
+  .lead-magnet .section-label::before { background: rgba(255,255,255,0.5); }
+  .lead-magnet h2 { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-weight: 500; color: var(--white); margin-bottom: 1rem; }
+  .lead-magnet p { font-size: 1rem; font-weight: 300; color: rgba(255,255,255,0.8); line-height: 1.75; margin-bottom: 2rem; }
+  .lead-form { display: flex; gap: 0.75rem; max-width: 480px; margin: 0 auto; }
+  .lead-form input { flex: 1; padding: 0.85rem 1.1rem; border: 1px solid rgba(255,255,255,0.3); border-radius: 2px; background: rgba(255,255,255,0.1); color: var(--white); font-size: 0.9rem; font-family: 'DM Sans', sans-serif; outline: none; }
+  .lead-form input::placeholder { color: rgba(255,255,255,0.5); }
+  .lead-form input:focus { border-color: rgba(255,255,255,0.7); background: rgba(255,255,255,0.15); }
+  .lead-form button { background: var(--gold); color: var(--navy); padding: 0.85rem 1.5rem; font-size: 0.8rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; border: none; border-radius: 2px; cursor: pointer; transition: background 0.2s; white-space: nowrap; font-family: 'DM Sans', sans-serif; }
+  .lead-form button:hover { background: #b8841f; }
+  .lead-note { font-size: 0.75rem; color: rgba(255,255,255,0.5); margin-top: 0.75rem; }
+
+  /* CTA */
+  .cta-section { background: var(--navy); padding: 6rem 4rem; text-align: center; }
+  .cta-section h2 { font-family: 'Cormorant Garamond', serif; font-size: 2.8rem; font-weight: 500; color: var(--white); margin-bottom: 1rem; line-height: 1.2; }
+  .cta-section h2 em { color: var(--teal); font-style: italic; }
+  .cta-section p { font-size: 1rem; font-weight: 300; color: rgba(255,255,255,0.65); margin-bottom: 2.5rem; max-width: 500px; margin-left: auto; margin-right: auto; line-height: 1.8; }
+  .cta-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+  /* FOOTER */
+  .footer { background: #0f1a2e; padding: 2rem 4rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+  .footer-brand { font-family: 'Cormorant Garamond', serif; font-size: 1rem; color: rgba(255,255,255,0.6); }
+  .footer-brand span { color: var(--teal); }
+  .footer-tagline { font-size: 0.75rem; color: rgba(255,255,255,0.3); letter-spacing: 0.08em; margin-top: 0.25rem; }
+  .footer-links { display: flex; gap: 1.5rem; }
+  .footer-links a { font-size: 0.75rem; color: rgba(255,255,255,0.4); text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; }
+  .footer-links a:hover { color: var(--teal); }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; }
+    .hero-right { display: none; }
+    .who-grid, .about-grid, .framework-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .what-grid, .offers-grid { grid-template-columns: 1fr; }
+    .who-cards { grid-template-columns: 1fr 1fr; }
+    .nav-links { display: none; }
+    section { padding: 3rem 1.5rem; }
+    .trust-bar { gap: 1rem; padding: 1rem 1.5rem; }
+    .lead-magnet { padding: 3rem 1.5rem; }
+    .lead-form { flex-direction: column; }
+    .cta-section { padding: 4rem 1.5rem; }
+    .footer { flex-direction: column; text-align: center; padding: 2rem 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-logo">Integral <span>Clarity</span> Coaching</div>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#framework">Framework</a>
+      <a href="#assessment">Free Assessment</a>
+      <a href="#contact" class="nav-cta">Book a Call</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-left">
+      <div class="hero-eyebrow">Integral Clarity Coaching</div>
+      <h1 class="hero-headline">Whole-Life Clarity.<br><em>Clear Action.</em></h1>
+      <div class="hero-tagline">Life Coaching &bull; Business Coaching &bull; Both</div>
+      <p class="hero-sub">You've built something real. Now it's time to build a life and business that both feel as good as they look — with a strategic, Integral framework that gives you the full picture and your next clear steps.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">Book a Free Discovery Call</a>
+        <a href="#assessment" class="btn-ghost">Take the Free Assessment</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-pattern"></div>
+      <div class="hero-card">
+        <div class="hero-card-label">The Integral Framework</div>
+        <div class="hero-pillars">
+          <div class="pillar">
+            <div class="pillar-dot"></div>
+            <div class="pillar-text"><strong>PERMAVAS</strong>A whole-life flourishing model across 8 dimensions</div>
+          </div>
+          <div class="pillar">
+            <div class="pillar-dot"></div>
+            <div class="pillar-text"><strong>IKIGAI</strong>Find your purpose at the intersection of passion and contribution</div>
+          </div>
+          <div class="pillar">
+            <div class="pillar-dot"></div>
+            <div class="pillar-text"><strong>Integral (AQAL)</strong>Ken Wilber's 4-quadrant whole-life lens</div>
+          </div>
+          <div class="pillar">
+            <div class="pillar-dot"></div>
+            <div class="pillar-text"><strong>OKR Execution</strong>Clarity converts to action — and results</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="trust-bar">
+    <div class="trust-item"><div class="trust-dot"></div>Integral Life Practice</div>
+    <div class="trust-item"><div class="trust-dot"></div>Harvard Business Review Life Strategy</div>
+    <div class="trust-item"><div class="trust-dot"></div>Ken Wilber AQAL Framework</div>
+    <div class="trust-item"><div class="trust-dot"></div>IKIGAI Purpose Alignment</div>
+    <div class="trust-item"><div class="trust-dot"></div>OKR Execution System</div>
+  </div>
+
+  <section class="who" id="about">
+    <div class="who-grid">
+      <div>
+        <div class="section-label">Who this is for</div>
+        <h2 class="section-headline">Built for professionals who are ready for more</h2>
+        <p class="section-body">You've worked hard to build something real — a career, a business, a life people admire from the outside. But something still feels off. Not broken. Just not fully alive. That gap between where you are and where you know you could be? That's exactly where we work.</p>
+      </div>
+      <div class="who-cards">
+        <div class="who-card">
+          <h4>Life Coaching</h4>
+          <p>Clarity on what a great life actually looks like for you — and a strategic plan to build it.</p>
+        </div>
+        <div class="who-card gold">
+          <h4>Business Coaching</h4>
+          <p>Purpose-driven strategy and clear execution for business owners and entrepreneurs.</p>
+        </div>
+        <div class="who-card gold">
+          <h4>Feeling stuck</h4>
+          <p>You've achieved success on paper but feel like you're just going through the motions.</p>
+        </div>
+        <div class="who-card">
+          <h4>Ready to grow</h4>
+          <p>You want more — more meaning, more impact, more of the life you actually envisioned.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="what">
+    <div class="section-label">What makes this different</div>
+    <h2 class="section-headline">This isn't motivation. It's a system.</h2>
+    <p class="section-body">Most coaching gives you energy for a week. Integral Clarity Coaching gives you a framework for life — one that sees every dimension of who you are and turns insight into real, lasting change.</p>
+    <div class="what-grid">
+      <div class="what-card">
+        <div class="what-num">01</div>
+        <h3>The whole picture</h3>
+        <p>The Integral framework looks at every quadrant of your life and business — not just the obvious ones. Nothing gets missed.</p>
+      </div>
+      <div class="what-card">
+        <div class="what-num">02</div>
+        <h3>Genuine clarity</h3>
+        <p>No more vague goals or scattered priorities. You'll know exactly what a great life and business look like — for you, specifically.</p>
+      </div>
+      <div class="what-card">
+        <div class="what-num">03</div>
+        <h3>Clear next steps</h3>
+        <p>Insight without action is just philosophy. Every engagement ends with a concrete OKR-based plan you can execute immediately.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="framework" id="framework">
+    <div class="section-label">The process</div>
+    <h2 class="section-headline">Seven questions that change everything</h2>
+    <div class="framework-grid">
+      <div class="framework-steps">
+        <div class="framework-step">
+          <div class="step-num">1</div>
+          <div class="step-content"><h4>Define a great life</h4><p>What does flourishing actually mean for you? We build your personal PERMAVAS profile.</p></div>
+        </div>
+        <div class="framework-step">
+          <div class="step-num">2</div>
+          <div class="step-content"><h4>Find your purpose</h4><p>IKIGAI mapping to discover where passion, skill, contribution and livelihood intersect.</p></div>
+        </div>
+        <div class="framework-step">
+          <div class="step-num">3</div>
+          <div class="step-content"><h4>Build your vision</h4><p>Craft a vivid, specific picture of the life and business you're building toward.</p></div>
+        </div>
+        <div class="framework-step">
+          <div class="step-num">4</div>
+          <div class="step-content"><h4>Assess your portfolio</h4><p>Honest evaluation of where you are across all strategic life areas.</p></div>
+        </div>
+        <div class="framework-step">
+          <div class="step-num">5–7</div>
+          <div class="step-content"><h4>Learn, choose &amp; execute</h4><p>Benchmarks, portfolio decisions, and a 90-day OKR plan with clear action steps.</p></div>
+        </div>
+      </div>
+      <div class="framework-pillars">
+        <div class="fw-pillar">
+          <h4>PERMAVAS</h4>
+          <p>Positive Emotions, Engagement, Relationships, Meaning, Achievement, Vitality, Autonomy, Spirituality — the eight dimensions of a genuinely great life.</p>
+        </div>
+        <div class="fw-pillar teal">
+          <h4>IKIGAI</h4>
+          <p>The Japanese framework for purpose — at the crossroads of what you love, what you're great at, what the world needs, and what sustains you.</p>
+        </div>
+        <div class="fw-pillar gold">
+          <h4>Integral (AQAL)</h4>
+          <p>Ken Wilber's 4-quadrant model ensures every solution addresses interior, exterior, individual, and collective dimensions simultaneously.</p>
+        </div>
+        <div class="fw-pillar">
+          <h4>OKR Execution</h4>
+          <p>Objectives and Key Results applied to your whole life — so clarity becomes momentum, and momentum becomes results.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about">
+    <div class="about-grid">
+      <div>
+        <div class="about-img">
+          <div class="about-img-placeholder">Your photo here</div>
+          <div class="about-img-accent"></div>
+        </div>
+      </div>
+      <div>
+        <div class="section-label">About Aaron</div>
+        <h2 class="section-headline">Coaching from inside the journey, not above it</h2>
+        <div class="about-quote">
+          <p>"I'm not coaching from a distant mountaintop. I'm working the same system, on the same journey — with hard-won tools to share."</p>
+        </div>
+        <p class="section-body">I'm Aaron Bump — a strategist, marketer, and life designer based in Marysville, Ohio. After years building go-to-market strategies for one of America's most beloved lifestyle brands, I started asking harder questions about my own life. The Integral framework gave me a system to answer them. Now I help other professionals do the same.</p>
+        <br>
+        <p class="section-body">I bring real strategic rigor to life and business coaching — frameworks, accountability, and clear next steps. Not just encouragement.</p>
+        <br>
+        <a href="#" class="btn-outline teal" style="display: inline-block; padding: 0.75rem 2rem; width: auto;">Read My Full Story</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="offers" id="services">
+    <div class="section-label">Work with Aaron</div>
+    <h2 class="section-headline">Choose your starting point</h2>
+    <p class="section-body">Whether you're focused on life, business, or both — there's a path designed for where you are right now.</p>
+    <div class="offers-grid">
+      <div class="offer-card">
+        <h3>1:1 Signature Coaching</h3>
+        <p class="offer-desc">The complete 12-week Integral Life Strategy engagement. Walk through all seven questions and leave with a personal strategy document and 90-day OKR plan.</p>
+        <div class="offer-details">
+          <div class="offer-detail">12 weeks, bi-weekly sessions</div>
+          <div class="offer-detail">6 x 60-minute 1:1 sessions</div>
+          <div class="offer-detail">Async support between sessions</div>
+          <div class="offer-detail">Personal Life Strategy document</div>
+          <div class="offer-detail">90-day OKR execution plan</div>
+        </div>
+        <div class="offer-price">From $600 <span>/ program</span></div>
+        <a href="#contact" class="btn-outline">Apply Now</a>
+      </div>
+      <div class="offer-card featured">
+        <div class="offer-badge">Most Popular</div>
+        <h3>Life &amp; Business Coaching</h3>
+        <p class="offer-desc">The full Integral framework applied across both your personal life and professional world — for those who want it all to thrive together.</p>
+        <div class="offer-details">
+          <div class="offer-detail">Life coaching + business strategy</div>
+          <div class="offer-detail">Integrated OKR planning</div>
+          <div class="offer-detail">IKIGAI purpose alignment</div>
+          <div class="offer-detail">Full PERMAVAS profile</div>
+          <div class="offer-detail">Ongoing strategic accountability</div>
+        </div>
+        <div class="offer-price">From $600 <span>/ program</span></div>
+        <a href="#contact" class="btn-outline">Apply Now</a>
+      </div>
+      <div class="offer-card">
+        <h3>Group Cohort Program</h3>
+        <p class="offer-desc">The same powerful framework in a cohort setting. 8 weeks with a small group of professionals — shared learning, individual strategy.</p>
+        <div class="offer-details">
+          <div class="offer-detail">8 weeks, weekly group calls</div>
+          <div class="offer-detail">8–12 participants max</div>
+          <div class="offer-detail">Shared workbook &amp; exercises</div>
+          <div class="offer-detail">Individual OKR planning</div>
+          <div class="offer-detail">Community accountability</div>
+        </div>
+        <div class="offer-price">From $297 <span>/ participant</span></div>
+        <a href="#contact" class="btn-outline">Join Waitlist</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="lead-magnet" id="assessment">
+    <div class="lead-inner">
+      <div class="section-label">Free resource</div>
+      <h2>Take the Life Portfolio Assessment</h2>
+      <p>In 10 minutes, get a clear picture of where you're thriving and where you're leaving life on the table. This is the same tool I use with every coaching client — and it's yours free.</p>
+      <div class="lead-form">
+        <input type="email" placeholder="Enter your email address" />
+        <button type="button">Get Free Access</button>
+      </div>
+      <div class="lead-note">No spam. One email with your free assessment. That's it.</div>
+    </div>
+  </div>
+
+  <section class="cta-section" id="contact">
+    <h2>Ready for <em>whole-life clarity</em>?</h2>
+    <p>Book a free 30-minute discovery call. We'll look at where you are, where you want to go, and whether Integral Clarity Coaching is the right fit.</p>
+    <div class="cta-actions">
+      <a href="mailto:aaron@integralclarity.com" class="btn-primary">Book a Free Discovery Call</a>
+      <a href="#framework" class="btn-ghost">Learn More About the Framework</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div>
+      <div class="footer-brand">Integral <span>Clarity</span> Coaching</div>
+      <div class="footer-tagline">Whole-Life Clarity. Clear Action.</div>
+    </div>
+    <div class="footer-links">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#framework">Framework</a>
+      <a href="#assessment">Free Assessment</a>
+      <a href="#contact">Book a Call</a>
+    </div>
+  </footer>
+
+</body>
+</html>
